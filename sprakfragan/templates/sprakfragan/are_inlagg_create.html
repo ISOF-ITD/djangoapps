@@ -1,0 +1,16 @@
+{% extends "sprakfragan/are_inlagg_base.html" %}
+
+{% block title %}
+    Create AreInlagg
+{% endblock %}
+
+{% block content %}
+<h1><a href={% url "are_inlagg_list" %}>AreInlagg</a></h1>
+<h2>Create AreInlagg</h2>
+
+<form action="" method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Create" />
+</form>
+<a href={% url "are_inlagg_list" %}>Cancel</a>
+{% endblock %}

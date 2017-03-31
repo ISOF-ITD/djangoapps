@@ -1,0 +1,14 @@
+{% extends "sprakfragan/fr_fragasvar_myisam_base.html" %}
+
+{% block title %}
+    {{ fr_fragasvar_myisam }}
+{% endblock %}
+
+{% block content %}
+    <h1><a href={% url "fr_fragasvar_myisam_list" %}>FrFragasvarMyisam</a></h1>
+    <h2>{{ fr_fragasvar_myisam }} | <a href={% url "fr_fragasvar_myisam_update" fr_fragasvar_myisam.pk %}>Update</a> | 
+    <form style="display:inline;" action={% url "fr_fragasvar_myisam_delete" fr_fragasvar_myisam.pk %} method="post" onsubmit="return confirm('Are you sure you want to delete {{ fr_fragasvar_myisam }}?')">{% csrf_token %}
+    <input type="submit" value="Delete" />
+    </form>
+    </h2>
+{% endblock %}

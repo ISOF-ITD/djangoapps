@@ -1,0 +1,16 @@
+{% extends "sprakfragan/date_test2_base.html" %}
+
+{% block title %}
+    Create DateTest2
+{% endblock %}
+
+{% block content %}
+<h1><a href={% url "date_test2_list" %}>DateTest2</a></h1>
+<h2>Create DateTest2</h2>
+
+<form action="" method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Create" />
+</form>
+<a href={% url "date_test2_list" %}>Cancel</a>
+{% endblock %}

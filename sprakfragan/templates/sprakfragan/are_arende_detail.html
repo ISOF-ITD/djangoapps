@@ -1,0 +1,14 @@
+{% extends "sprakfragan/are_arende_base.html" %}
+
+{% block title %}
+    {{ are_arende }}
+{% endblock %}
+
+{% block content %}
+    <h1><a href={% url "are_arende_list" %}>AreArende</a></h1>
+    <h2>{{ are_arende }} | <a href={% url "are_arende_update" are_arende.pk %}>Update</a> | 
+    <form style="display:inline;" action={% url "are_arende_delete" are_arende.pk %} method="post" onsubmit="return confirm('Are you sure you want to delete {{ are_arende }}?')">{% csrf_token %}
+    <input type="submit" value="Delete" />
+    </form>
+    </h2>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "sprakfragan/date_test2_base.html" %}
+
+{% block title %}
+    Update {{ date_test2 }}
+{% endblock %}
+
+{% block content %}
+<h1><a href={% url "date_test2_list" %}>DateTest2</a></h1>
+<h2>Update {{ date_test2 }}</h2>
+
+<form action="" method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Update" />
+</form>
+<a href={% url "date_test2_detail" date_test2.pk %}>Cancel</a>
+<form style="display:inline;" action={% url "date_test2_delete" date_test2.pk %} method="post" onsubmit="return confirm('Are you sure you want to delete {{ date_test2 }}?')">{% csrf_token %}
+    <input type="submit" value="Delete" />
+</form>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "sprakfragan/fr_fragasvar_base.html" %}
+
+{% block title %}
+    FrFragasvars
+{% endblock %}
+
+{% block content %}
+    <h1>FrFragasvars</h1>
+    <h2><a href={% url "fr_fragasvar_create" %}>Create new FrFragasvar</a></h2>
+    <ul>
+    {% for fr_fragasvar in fr_fragasvar_list %}
+        <li><a href={% url "fr_fragasvar_detail" fr_fragasvar.pk %}>{{ fr_fragasvar }}</a> | <a href={% url "fr_fragasvar_update" fr_fragasvar.pk %}>Update</a> | <form style="display:inline;" action={% url "fr_fragasvar_delete" fr_fragasvar.pk %} method="post" onsubmit="return confirm('Are you sure you want to delete {{ fr_fragasvar }}?')">{% csrf_token %}
+    <input type="submit" value="Delete" />
+    </form></li>
+    {% empty %}
+        <li>No FrFragasvars yet.</li>
+    {% endfor %}
+    </ul>
+{% endblock %}
+

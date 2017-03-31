@@ -1,0 +1,17 @@
+{% extends "sprakfragan/fr_fragasvar_test1_base.html" %}
+
+{% block title %}
+    Delete {{ fr_fragasvar_test1 }}
+{% endblock %}
+
+{% block content %}
+<h1>Delete {{ fr_fragasvar_test1 }}</h1>
+
+<form action="" method="post">{% csrf_token %}
+    <p>Are you sure you want to delete {{ fr_fragasvar_test1 }}?</p>
+    <input type="submit" value="Confirm" />
+</form>
+
+<a href={% url "fr_fragasvar_test1_detail" fr_fragasvar_test1.pk %}>Cancel</a>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "sprakfragan/nyckelord_base.html" %}
+
+{% block title %}
+    Create Nyckelord
+{% endblock %}
+
+{% block content %}
+<h1><a href={% url "nyckelord_list" %}>Nyckelord</a></h1>
+<h2>Create Nyckelord</h2>
+
+<form action="" method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Create" />
+</form>
+<a href={% url "nyckelord_list" %}>Cancel</a>
+{% endblock %}

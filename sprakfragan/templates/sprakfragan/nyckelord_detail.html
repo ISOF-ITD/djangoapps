@@ -1,0 +1,14 @@
+{% extends "sprakfragan/nyckelord_base.html" %}
+
+{% block title %}
+    {{ nyckelord }}
+{% endblock %}
+
+{% block content %}
+    <h1><a href={% url "nyckelord_list" %}>Nyckelord</a></h1>
+    <h2>{{ nyckelord }} | <a href={% url "nyckelord_update" nyckelord.pk %}>Update</a> | 
+    <form style="display:inline;" action={% url "nyckelord_delete" nyckelord.pk %} method="post" onsubmit="return confirm('Are you sure you want to delete {{ nyckelord }}?')">{% csrf_token %}
+    <input type="submit" value="Delete" />
+    </form>
+    </h2>
+{% endblock %}

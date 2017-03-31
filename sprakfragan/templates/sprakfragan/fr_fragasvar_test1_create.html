@@ -1,0 +1,16 @@
+{% extends "sprakfragan/fr_fragasvar_test1_base.html" %}
+
+{% block title %}
+    Create FrFragasvarTest1
+{% endblock %}
+
+{% block content %}
+<h1><a href={% url "fr_fragasvar_test1_list" %}>FrFragasvarTest1</a></h1>
+<h2>Create FrFragasvarTest1</h2>
+
+<form action="" method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Create" />
+</form>
+<a href={% url "fr_fragasvar_test1_list" %}>Cancel</a>
+{% endblock %}

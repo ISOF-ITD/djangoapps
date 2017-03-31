@@ -1,0 +1,17 @@
+{% extends "sprakfragan/date_test_base.html" %}
+
+{% block title %}
+    Delete {{ date_test }}
+{% endblock %}
+
+{% block content %}
+<h1>Delete {{ date_test }}</h1>
+
+<form action="" method="post">{% csrf_token %}
+    <p>Are you sure you want to delete {{ date_test }}?</p>
+    <input type="submit" value="Confirm" />
+</form>
+
+<a href={% url "date_test_detail" date_test.pk %}>Cancel</a>
+
+{% endblock %}
