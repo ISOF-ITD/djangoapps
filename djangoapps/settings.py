@@ -80,15 +80,15 @@ WSGI_APPLICATION = 'djangoapps.wsgi.application'
 
 DATABASES = {
     'default': {
-        'HOST': ' uuc-isof001-t.its.uu.se',
+        'HOST': '',
         'PORT': ' 3306',
         #'NAME': 'svenska_sagor',
         'NAME': 'sprakfragan_test',
         # 'NAME': 'ortnamn',
         #'NAME': 'test',
         'ENGINE': 'mysql.connector.django',
-        'USER': 'pnamedeveloper',
-        'PASSWORD': 'mOrt_6102',
+        'USER': '',
+        'PASSWORD': '',
         'OPTIONS': {
           'autocommit': False,
         },
